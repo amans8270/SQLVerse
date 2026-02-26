@@ -1,0 +1,25 @@
+[project]
+name = "sqlverse"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "AMAN SINGH", email = "AMASN8270@GMAIL.COM" }
+]
+dependencies = [
+    "fastapi==0.110.0",
+    "uvicorn[standard]==0.27.1",
+    "python-dotenv==1.0.1",
+    "pydantic==2.6.1",
+    "pydantic-settings==2.2.1",
+    "pymongo==4.6.2",
+    "cryptography==42.0.2",
+    "langchain==0.1.9",
+    "langchain-community==0.0.24",
+    "langchain-openai==0.0.7",
+    "openai==1.12.0",
+    "sqlalchemy==2.0.27",
+    "psycopg2-binary==2.9.9",
+    "pymysql==1.1.0"
+]

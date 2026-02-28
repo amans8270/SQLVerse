@@ -1,9 +1,9 @@
 # app/api/routes/connections.py
 
 from fastapi import APIRouter
-from app.services.encryption_service import encrypt_data
-from app.db.mongodb import db
-from app.schemas.connection_schema import ConnectionCreate
+from services.encryption_service import encrypt_data
+from db.mongodb import db
+from schemas.connection_schema import ConnectionCreate
 
 router = APIRouter()
 
@@ -14,5 +14,5 @@ def create_connection(payload: ConnectionCreate):
     record = payload.dict(exclude={"credentials"})
     record["encrypted_credentials"] = encrypted
 
-    db.connections.insert_one(record)
-    return {"status": "connection_saved"}
+    result = db.connections.insert_one(record)
+    return {"status": "success", "connection_id": str(result.inserted_id)}
